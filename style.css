@@ -47,7 +47,7 @@ box-sizing: border-box;
     height: 50px;           /* Fixed height, matching width */
     box-sizing: border-box;
 }
-.box-0 {
+#zero {
     grid-column: 2 / 3; /* Start at the second column and end at the third */
     justify-self: center; /* Center horizontally */
 }
