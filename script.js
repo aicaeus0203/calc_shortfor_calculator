@@ -9,7 +9,10 @@ const btn8 = document.querySelector("#eight");
 const btn9 = document.querySelector("#nine");
 const btn0 = document.querySelector("#zero");
 const result = document.querySelector("#display");
+let tempNum;
 let total = '';
+let computeArr = [];
+let arrCounter = 0;
 btn1.addEventListener("click",()=> {
     total += '1';
     result.innerHTML = total;
@@ -92,4 +95,46 @@ document.addEventListener('keydown', function (e){
         total += '9';
         result.innerHTML = total;
     }
+    if(e.key =='Backspace'){
+        total = total.slice(0,-1)
+        result.innerHTML = total;
+    }
+    if(e.key == '+'){
+        computeArr[arrCounter] = Number(total);
+        total = '';
+        result.innerHTML = total;
+        arrCounter++;
+        computeArr[arrCounter] = '+';
+        arrCounter++;
+    }
+    if(e.key == '-'){
+        computeArr[arrCounter] = Number(total);
+        total = '';
+        result.innerHTML = total;
+        arrCounter++;
+        computeArr[arrCounter] = '-';
+        arrCounter++;
+    }
+    if(e.key == '*'){
+        computeArr[arrCounter] = Number(total);
+        total = '';
+        result.innerHTML = total;
+        arrCounter++;
+        computeArr[arrCounter] = '*';
+        arrCounter++;
+    }
+    if(e.key == '/'){
+        computeArr[arrCounter] = Number(total);
+        total = '';
+        result.innerHTML = total;
+        arrCounter++;
+        computeArr[arrCounter] = '/';
+        arrCounter++;
+    }
+    /*if(e.key =='Enter'){
+        computeArr[arrCounter] = Number(total);
+        total = '';
+        arrCounter++;
+    }*/
+
 });
